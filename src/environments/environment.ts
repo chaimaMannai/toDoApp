@@ -2,8 +2,20 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig :{
+    apiKey: "AIzaSyDu0aF3FPOcjHittcs6HdbDW4PMuP2g8Ow",
+    authDomain: "todoapp-7cb9b.firebaseapp.com",
+    projectId: "todoapp-7cb9b",
+    storageBucket: "todoapp-7cb9b.appspot.com",
+    messagingSenderId: "842148102597",
+    appId: "1:842148102597:web:19715ce91971c9352dcbac",
+    measurementId: "G-P5GVTS69P0"
+  }
+
+
 };
 
 /*
@@ -14,3 +26,6 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+
+// Initialize Firebase

@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ToDoList</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="deconnexion()">
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="background">
+  <div class="ion-padding-horizontal">
+    <h1><b>Aujourd'hui</b></h1>
+    {{date | date:'dd/MM/yyyy'}}
+  </div>
+  
+  <ion-card *ngFor="let t of tasks">
+    <ion-item-sliding>
+      <ion-item lines="none">
+        <ion-checkbox (ionChange)="changeState(t)" color="success" [(ngModel)]="t.checked" slot="start"></ion-checkbox>
+        <ion-label>
+          <h2 *ngIf="!t.checked">{{ t.text }}</h2>
+          <h2 *ngIf="t.checked" style="text-decoration:line-through;">{{ t.text }}</h2>
+          <p>{{ t.hour }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-card>
+
+ 
+  <ion-card *ngIf="ajout">
+    <ion-item lines="none">
+      <ion-input [(ngModel)]="task" placeholder="Entrer une tâche!"></ion-input>
+      <ion-button (click)="ajouTache()" shape="round" slot="end">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+
+    </ion-item>
+  </ion-card>
+
+  <ion-button (click)="show()"  expand="block">
+    <ion-icon name="add" slot="start"></ion-icon>
+    Ajouter une tâche
+  </ion-button>
+
+  <ion-button *ngIf="ajout" (click)="show()" expand="block">
+    <ion-icon name="arrow-undo-circle-outline" slot="start"></ion-icon>
+    Annuler
+  </ion-button>
+
+  
+</ion-content>
+
+
