@@ -53,8 +53,8 @@ date : l'heure de création du task
       checked: false,
       uid : this.serviceAuth.data
     });
+    
     this.ajout=false;
-    this.nb++ ;
 
   }
   /* Cette methode permet de changer la valeur de la  variable booléenne ajout lors d'ajout d'un task*/
