@@ -19,7 +19,8 @@ export class LoginPage implements OnInit {
     
     
   }
-  
+  /* Cette methode implémenté au niveau de service d'authetification firebase permet a un utilisateur de 
+  logger apres va être rediriger vers home du notre application s'il y a un erreur va être notifié par alert */
   async loginUser(form):Promise<void>{
     this.authService.loginUser(form.value.email,form.value.password).then(
       ()=>{
@@ -37,7 +38,7 @@ export class LoginPage implements OnInit {
   
   }
 
-    
+    /* cette methode appelé au niveau d'un bouton si l'utilisateur oublié son mot de passe  */
   gotoResetPwd(){ 
     this.router.navigateByUrl('reset-pwd'); 
   }
